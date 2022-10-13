@@ -1,0 +1,4 @@
+<div class="toCenter">
+  <button id="load-btn" (click)="onLoadData()">{{ loadButtonContent }}</button>
+</div>
+<app-table *ngIf="renderTable" [usersData]="usersData"></app-table>

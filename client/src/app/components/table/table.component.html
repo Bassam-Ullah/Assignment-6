@@ -1,0 +1,36 @@
+<div>
+  <table>
+    <tr>
+      <th *ngFor="let heading of headings">{{ heading }}</th>
+    </tr>
+    <tr *ngFor="let user of usersData">
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.middlename }}</td>
+      <td>{{ user.lastname }}</td>
+      <td>{{ user.user_email }}</td>
+      <td>{{ user.user_phone }}</td>
+      <td>{{ user.user_address }}</td>
+      <td>{{ user.role_name }}</td>
+      <td>{{ user.customer_name }}</td>
+      <td>
+        <button class="edit-btn" (click)="onEdit($event)">Edit</button>
+        <button class="delete-btn" (click)="onDelete(user)">Delete</button>
+        <button
+          class="save-btn"
+          style="display: none"
+          (click)="onSave($event, user)"
+        >
+          Save
+        </button>
+        <button
+          class="cancel-btn"
+          style="display: none"
+          (click)="onCancel($event)"
+        >
+          Cancel
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+<app-add-user (onSubmitUser)="onAddUser()"></app-add-user>

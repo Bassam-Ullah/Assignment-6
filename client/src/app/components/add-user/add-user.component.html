@@ -1,0 +1,102 @@
+<div *ngIf="showAddForm" class="form-container">
+  <form class="add-form" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <input type="text" formControlName="firstName" placeholder="First Name" />
+    </div>
+    <small
+      *ngIf="
+        !addUserForm.get('firstName')?.valid &&
+        addUserForm.get('firstName')?.touched
+      "
+      >Required Field</small
+    >
+
+    <div class="form-control">
+      <input
+        type="text"
+        formControlName="middleName"
+        placeholder="Middle Name"
+      />
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="lastName" placeholder="Last Name" />
+    </div>
+    <small
+      *ngIf="
+        !addUserForm.get('lastName')?.valid &&
+        addUserForm.get('lastName')?.touched
+      "
+      >Required Field</small
+    >
+
+    <div class="form-control">
+      <input type="email" formControlName="email" placeholder="Email" />
+    </div>
+    <small
+      *ngIf="
+        !addUserForm.get('email')?.valid && addUserForm.get('email')?.touched
+      "
+      >Enter Valid Email</small
+    >
+
+    <div class="form-control">
+      <input type="number" formControlName="phone" placeholder="Phone" />
+    </div>
+    <small
+      *ngIf="
+        !addUserForm.get('phone')?.valid && addUserForm.get('phone')?.touched
+      "
+      >Required Field</small
+    >
+
+    <div class="form-control">
+      <input type="text" formControlName="address" placeholder="Address" />
+    </div>
+    <small
+      *ngIf="
+        !addUserForm.get('address')?.valid &&
+        addUserForm.get('address')?.touched
+      "
+      >Required Field</small
+    >
+
+    <div class="form-control">
+      <select formControlName="roleName">
+        <option value="Super Admin">Super Admin</option>
+        <option value="Admin">Admin</option>
+        <option value="Subscriber">Subscriber</option>
+      </select>
+    </div>
+
+    <div class="form-control">
+      <input
+        type="text"
+        formControlName="customerName"
+        placeholder="Customer Name"
+      />
+    </div>
+    <small
+      *ngIf="
+        !addUserForm.get('customerName')?.valid &&
+        addUserForm.get('customerName')?.touched
+      "
+      >Required Field</small
+    >
+
+    <div class="form-control">
+      <input
+        type="submit"
+        value="Submit"
+        [disabled]="addUserForm.status === 'INVALID'"
+      />
+    </div>
+  </form>
+</div>
+<button
+  *ngIf="showAddButton"
+  id="add-btn"
+  (click)="showAddForm = true; showAddButton = !showAddButton"
+>
+  Add User
+</button>

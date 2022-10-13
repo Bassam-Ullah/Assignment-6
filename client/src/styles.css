@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow";
+
+  background-color: lightcyan;
+}
+
+button {
+  background-color: transparent;
+  padding: 5px;
+}
+
+#load-btn {
+  font-size: 30px;
+}
+
+.toCenter {
+  text-align: center;
+  margin: 20px;
+}
